@@ -2,15 +2,22 @@ package ar.edu.unlam.dominio;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestCalculadora {
 	
+	private Calculadora kasio;
+	
+	@Before
+	public void inicializacion() {
+		this.kasio = new Calculadora();
+	}
+	
 	@Test
 	public void dadoQueTengoUnaSumaElResultadoDebeDarme10() {
-		Calculadora kasio = new Calculadora();
 		
-		Integer sumaDeLaCalculadoraKasioObtenida = kasio.getSumar(7, 3);
+		Integer sumaDeLaCalculadoraKasioObtenida = this.kasio.getSumar(7, 3);
 		Integer sumaDeLaCalculadoraKasioEsperada = 10;
 		
 		assertEquals(sumaDeLaCalculadoraKasioEsperada, sumaDeLaCalculadoraKasioObtenida);
@@ -18,9 +25,8 @@ public class TestCalculadora {
 	
 	@Test
 	public void dadoQueTengoUnaRestaElResultadoDebeDarme5() {
-		Calculadora kasio = new Calculadora();
 		
-		Integer restaDeLaCalculadoraKasioObtenida = kasio.getRestar(7, 2);
+		Integer restaDeLaCalculadoraKasioObtenida = this.kasio.getRestar(7, 2);
 		Integer restaDeLaCalculadoraKasioEsperada = 5;
 		
 		assertEquals(restaDeLaCalculadoraKasioEsperada, restaDeLaCalculadoraKasioObtenida);
@@ -28,9 +34,8 @@ public class TestCalculadora {
 	
 	@Test
 	public void dadoQueTengoUnaMultiplicacionElResultadoDebeDarme12() {
-		Calculadora kasio = new Calculadora();
 		
-		Integer multiplicacionDeLaCalculadoraKasioObtenida = kasio.getMultiplicar(6, 2);
+		Integer multiplicacionDeLaCalculadoraKasioObtenida = this.kasio.getMultiplicar(6, 2);
 		Integer multiplicacionDeLaCalculadoraKasioEsperada = 12;
 		
 		assertEquals(multiplicacionDeLaCalculadoraKasioEsperada, multiplicacionDeLaCalculadoraKasioObtenida);
@@ -38,9 +43,8 @@ public class TestCalculadora {
 	
 	@Test
 	public void dadoQueTengoUnadivisionElResultadoDebeDarme4() {
-		Calculadora kasio = new Calculadora();
 		
-		Integer divisionDeLaCalculadoraKasioObtenida = kasio.getDividir(8, 0);
+		Integer divisionDeLaCalculadoraKasioObtenida = this.kasio.getDividir(8, 0);
 		Integer divisionDeLaCalculadoraKasioEsperada = 0;
 		
 		assertEquals(divisionDeLaCalculadoraKasioEsperada, divisionDeLaCalculadoraKasioObtenida);
